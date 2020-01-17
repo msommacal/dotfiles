@@ -1,3 +1,5 @@
 # Local configuration files
 *.local
 
+# Vim plugins files
+vim/.vim/bundle/*
