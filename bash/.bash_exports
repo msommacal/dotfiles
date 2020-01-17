@@ -1,0 +1,5 @@
+# Python
+export PATH=$PATH:$HOME/.local/bin
+
+# TexLive
+export PATH=$PATH:$HOME/
