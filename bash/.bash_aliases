@@ -14,6 +14,7 @@ alias egrep='egrep --color=auto'
 # Common aliases
 alias l='ls -CF'
 alias la='ls -A'
+alias open='xdg-open'
 alias ps-grep='ps -ely | grep'
 
 # Python aliases
