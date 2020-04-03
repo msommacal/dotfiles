@@ -24,6 +24,7 @@ alias virtualenv='virtualenv -v --no-site-packages venv'
 
 # Miscellaneous aliases
 alias week='date +%V'
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 
 # This should be the last line of the file
 # For local changes
