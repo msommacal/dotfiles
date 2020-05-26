@@ -21,3 +21,6 @@ user_pref("extensions.pocket.enabled", false);
 
 // Set the interval between two session backup
 user_pref("browser.sessionstore.interval", 120000);
+
+// Enable the encrypted SNI
+user_pref("network.security.esni.enabled", true);

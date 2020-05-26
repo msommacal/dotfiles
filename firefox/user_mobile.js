@@ -12,3 +12,6 @@ user_pref("network.prefetch-next", false);
 
 // Enable zoom on all webpages
 user_pref("browser.ui.zoom.force-user-scalable", true);
+
+// Enable the encrypted SNI
+user_pref("network.security.esni.enabled", true);
