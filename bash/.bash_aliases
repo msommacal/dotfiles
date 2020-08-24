@@ -14,8 +14,10 @@ alias egrep='egrep --color=auto'
 # Common aliases
 alias l='ls -CF'
 alias la='ls -A'
+alias mkdir='mkdir -pv'
 alias open='xdg-open'
 alias ps-grep='ps -ely | grep'
+alias wget='wget -c'
 
 # Python aliases
 alias python='python3'
@@ -25,6 +27,7 @@ alias virtualenv='virtualenv -v --no-site-packages venv'
 # Miscellaneous aliases
 alias week='date +%V'
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias myip='curl http://ipecho.net/plain; echo'
 
 # This should be the last line of the file
 # For local changes
