@@ -24,3 +24,9 @@ user_pref("browser.sessionstore.interval", 120000);
 
 // Enable the encrypted SNI
 user_pref("network.security.esni.enabled", true);
+
+// Always show the bookmarks bar
+user_pref("browser.toolbars.bookmarks.visibility", "always");
+
+// Hide other bookmarks in the bookmarks bar
+user_pref("browser.toolbars.bookmarks.showOtherBookmarks", false);

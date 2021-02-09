@@ -77,8 +77,3 @@
 #nav-bar ~ #PersonalToolbar:not([customizing]) {
    top: calc(var(--toolbar-offset-height) + 8px) !important;
 }
-
-/* Hide other bookmarks in the bookmarks bar */
-toolbarbutton#OtherBookmarks.bookmark-item {
-    display:none !important;
-}
