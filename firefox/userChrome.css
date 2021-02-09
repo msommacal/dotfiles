@@ -10,7 +10,7 @@
 
 #PersonalToolbar:not([customizing]) {
    position: fixed !important;
-   margin-top: -29px !important;
+   margin-top: -34px !important;
    padding-top: 4px !important;
    padding-bottom: 5px !important;
    height: auto !important;
@@ -76,4 +76,9 @@
 :root:not([lwtheme="true"]):not([tabsintitlebar="true"])
 #nav-bar ~ #PersonalToolbar:not([customizing]) {
    top: calc(var(--toolbar-offset-height) + 8px) !important;
+}
+
+/* Hide other bookmarks in the bookmarks bar */
+toolbarbutton#OtherBookmarks.bookmark-item {
+    display:none !important;
 }
