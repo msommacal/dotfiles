@@ -22,6 +22,9 @@ shopt -s nocaseglob
 shopt -s histappend
 shopt -s checkwinsize
 
+# Show when variables are unset
+set -u
+
 # Define the default colored prompt
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
