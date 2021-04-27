@@ -18,11 +18,13 @@ alias mkdir='mkdir -pv'
 alias open='xdg-open'
 alias ps-grep='ps -ely | grep'
 alias wget='wget -c'
+alias diff='diff --color --width=$COLUMNS'
 
 # Python aliases
 alias python='python3'
 alias pip='pip3'
-alias virtualenv='virtualenv -v --no-site-packages venv'
+alias virtualenv='virtualenv -v venv'
+alias activate='source venv/bin/activate'
 
 # Miscellaneous aliases
 alias week='date +%V'
