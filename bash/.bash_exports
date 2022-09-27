@@ -1,5 +1,20 @@
+# Astyle
+export ARTISTIC_STYLE_OPTIONS="$HOME/.config/astyle/astylerc"
+
+# Bash (debug mode)
+export PS4='${BASH_SOURCE[0]}:$LINENO '
+
+# Java
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
 # Python
 export PATH=$PATH:$HOME/.local/bin
 
+# Scikit
+export SCIKIT_LEARN_DATA=$HOME/Documents/.scikit
+
 # TexLive
 export PATH=$PATH:$HOME/
+
+# Vi
+export EDITOR=/usr/bin/vi

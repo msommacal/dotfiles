@@ -1,0 +1,106 @@
+# Brace Style options define the brace style to use. All options
+# default to 4 spaces per indent, indented with spaces. By default,
+# none of the styles indent namespaces. Other indentations are
+# indicated in the individual style description. All options will
+# break the braces for one line blocks and will break one line
+# statements.
+#
+# Java style uses attached braces.
+--style=attach
+
+# Indent using 4 spaces per indent.
+--indent=spaces=4
+
+# Attach braces to a class statement. This is done regardless of the
+# brace style being used.
+--attach-classes
+
+# Attach the closing 'while' of a 'do-while' statement to the closing
+# brace. This has precedence over both the brace style and the break
+# closing braces option.
+--attach-closing-while
+
+# Indent 'class' and 'struct' blocks so that the entire block is
+# indented. The struct blocks are indented only if an access modifier,
+# 'public:', 'protected:' or 'private:', is declared somewhere in the
+# struct. This option is effective for C++ files only.
+--indent-classes
+
+# Indent 'switch' blocks so that the 'case X:' statements are indented
+# in the switch block. The entire case block is indented.
+--indent-switches
+
+# Pad empty lines around header blocks (e.g. 'if', 'for', 'while',
+# ...)
+--break-blocks
+
+# Insert space padding after commas. This is not needed if pad-oper is
+# used. Any end of line comments will remain in the original column,
+# if possible. Note that there is no option to unpad. Once padded,
+# they stay padded.
+--pad-comma
+
+# Insert space padding between a header (e.g. 'if', 'for', 'while',
+# ...) and the following paren. Any end of line comments will remain
+# in the original column, if possible. This can be used with
+# unpad-paren to remove unwanted spaces.
+--pad-header
+
+# Remove extra space padding around parens on the inside and outside.
+# Any end of line comments will remain in the original column, if
+# possible. This option can be used in combination with the paren
+# padding options pad-paren, pad-paren-out, pad-paren-in, and
+# pad-header above. Only padding that has not been requested by other
+# options will me removed.
+#
+# For example, if a source has parens padded on both the inside and
+# outside, and you want inside only. You need to use unpad-paren to
+# remove the outside padding, and pad-paren-in to retain the inside
+# padding. Using only pad-paren-in would not remove the outside
+# padding.
+--unpad-paren
+
+# Delete empty lines within a function or method. EMpty lines outisde
+# of functions or methods are NOT deleted. If used with break-blocks
+# or break-blocks=all it will delete all lines EXCEPT the lines added
+# by the break-blocks options.
+--delete-empty-lines
+
+# Attach a pointer or reference operator (*, &, or ^) to either the
+# variable type (left) or variable name (right), or place it between
+# the type and name (middle). The spacing between the type and name
+# will be preserved, if possible. This option is for C/C++, C++/CLI,
+# and C# files. To format references separately, use the following
+# align-reference option.
+--align-pointer=name
+
+# Add braces to unbraced one line conditional statements (e.g. 'if',
+# 'for', 'while', ...). The statement must be on a single line. The
+# braces will be added according to the requested brace style. If no
+# style is requested the braces will be attached.
+#
+# Braces will NOT be added to a multi-statement line if
+# keep-one-line-statements is requested. Braces will NOT be added to a
+# one line block if keep-one-line-blocks is requested. If used with
+# --add-one-line-braces, the result will be one line braces.
+--add-braces
+
+# Attach the return type to the function name. The two options are for
+# the function definitions (-xf), and the function declarations or
+# signatures (-xh). They are intended to undo the --break-return-type
+# options. If used with --break-return-type, the result will be to
+# break the return type. This option has no effect on Objective-C
+# functions.
+--attach-return-type
+--attach-return-type-decl
+
+# Verbose display mode. Display optional information, such as release
+# number, date, option file locations, and statistical data.
+--verbose
+
+# Force use of the specified line end style. Valid options are windows
+# (CRLF), linux (LF), and macold (CR). MacOld style is the format for
+# Mac OS 9 and earlier. MacOS and OS X uses the Linux style. If one of
+# these options is not used, the line ends will be determined
+# automatically from the input file.
+--lineend=linux
