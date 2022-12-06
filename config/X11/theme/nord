@@ -1,0 +1,42 @@
+#define ALERT       #bf616a
+#define BACKGROUND  #2e3440
+#define DISABLED    #4c566a
+#define FOCUSED     #4c566a
+#define FOREGROUND  #d8dee9
+
+! black
+#define COLOR0      #2e3440
+#define COLOR8      #4c566a
+
+! red
+#define COLOR1      #d08770
+#define COLOR9      #d08770
+
+! green
+#define COLOR2      #a3be8c
+#define COLOR10     #a3be8c
+
+! yellow
+#define COLOR3      #ebcb8b
+#define COLOR11     #ebcb8b
+
+! blue
+#define COLOR4      #5e81ac
+#define COLOR12     #5e81ac
+
+! magenta
+#define COLOR5      #b48ead
+#define COLOR13     #b48ead
+
+! cyan
+#define COLOR6      #88c0d0
+#define COLOR14     #88c0d0
+
+! white
+#define COLOR7      #d8dee9
+#define COLOR15     #d8dee9
+
+! fonts
+#define FONT        Ubuntu Mono Regular
+
+! vim: ft=xdefaults

@@ -1,0 +1,5 @@
+! fonts
+xterm*faceName: FONT
+xterm*faceSize: 10
+
+! vim: ft=xdefaults

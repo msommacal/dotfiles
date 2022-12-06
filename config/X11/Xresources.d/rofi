@@ -1,0 +1,10 @@
+! colors
+rofi.color-window: BACKGROUND, FOCUSED,    FOREGROUND
+rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, FOCUSED, FOREGROUND
+rofi.color-active: DISABLED,   FOREGROUND, DISABLED,   FOCUSED, FOREGROUND
+rofi.color-urgent: ALERT,      FOREGROUND, ALERT,      FOCUSED, FOREGROUND
+
+! fonts
+rofi.font: FONT 12
+
+! vim: ft=xdefaults

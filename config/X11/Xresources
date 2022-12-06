@@ -1,0 +1,11 @@
+! theme
+#include ".config/X11/theme/nord"
+
+! colors
+#include ".config/X11/Xresources.d/colors"
+
+! xterm
+#include ".config/X11/Xresources.d/xterm"
+
+! rofi
+#include ".config/X11/Xresources.d/rofi"
