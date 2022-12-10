@@ -1,0 +1,37 @@
+# "Run commands" aliases
+alias bashrc='vi ~/.config/bash/bashrc'
+alias vimrc='vi ~/.vim/vimrc'
+
+# Color aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias tree='tree -C'
+
+# Common aliases
+alias l='ls -CF'
+alias la='ls -A'
+alias mkdir='mkdir -pv'
+alias open='xdg-open'
+alias ps-grep='ps -ely | grep'
+alias wget='wget -c'
+alias diff='diff --color --width=$COLUMNS'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm --preserve-root'
+#alias cal='cal -M'
+
+# Python aliases
+alias python='python3'
+alias pip='pip3'
+alias virtualenv='virtualenv -v venv'
+alias activate='source venv/bin/activate'
+
+# Miscellaneous aliases
+alias week='date +%V'
+alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+alias myip='curl http://ipecho.net/plain; echo'
+alias httpserver='python3 -m http.server & firefox localhost:8000'
+
+# vim: ft=bash

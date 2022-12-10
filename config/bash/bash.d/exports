@@ -1,0 +1,49 @@
+# Astyle
+export ARTISTIC_STYLE_OPTIONS="$HOME/.config/astyle/astylerc"
+
+# Bash (debug mode)
+export PS4='${BASH_SOURCE[0]}:$LINENO '
+
+# Docker
+export DOCKER_CONFIG="$HOME/.config/docker"
+
+# GDB
+export GDBHISTFILE="$HOME/.local/state/gdb/history"
+
+# Java
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+
+# Jupyter
+export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
+
+# Less
+export LESSHISTFILE="$HOME/.local/state/less/history"
+export LESSKEY="$HOME/.config/less/keys"
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# Readline
+export INPUTRC="$HOME/.config/readline/inputrc"
+
+# Scikit
+export SCIKIT_LEARN_DATA="$HOME/.local/share/scikit"
+
+# Scripts
+export PATH=$PATH:$HOME/.local/bin
+
+# SQLite
+export SQLITE_HISTORY="$HOME/.local/state/sqlite/history"
+
+# TexLive
+export PATH=$PATH:$HOME/
+export TEXMFHOME=$HOME/.local/share/texmf
+
+# Vi
+export EDITOR=/usr/bin/vi
+
+# vim: ft=bash

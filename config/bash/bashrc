@@ -1,0 +1,48 @@
+# Check for interactive shell
+if [[ ! "$-" =~ "i" ]]; then
+    return 0 
+fi
+
+# Source the aliases, binds, functions and exports
+for i in $HOME/.config/bash/bash.d/*; do
+    source $i
+done
+
+# Source the auto-completion
+for i in $HOME/.config/bash/completion.d/*; do
+    source $i
+done
+
+# Set the history
+HISTCONTROL=ignoreboth
+HISTSIZE=1000000
+export HISTFILE="$HOME/.local/state/bash/history"
+export HISTFILESIZE=""
+export HISTTIMEFORMAT="%F %T "
+PROMPT_COMMAND="$PROMPT_COMMAND: history -a"
+
+# The Shopt Builtin
+shopt -s autocd
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s dirspell
+shopt -s histappend
+shopt -s nocaseglob
+
+# Disable the bell
+# bind 'set bell-style none'
+
+# Define the default colored prompt
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# Add git branch to the prompt
+PS1+='$(git_branch)'
+
+# Colorscheme with PyWal
+#(cat /home/msommacal/.cache/wal/sequences &)
+
+# Start a tmux session
+if [[ -z $TMUX ]]; then
+    tmux
+fi

@@ -1,0 +1,8 @@
+# Prefix search on history
+bind '"\e[B": history-search-forward'
+bind '"\e[A": history-search-backward'
+
+# Vi mode (don't work with bind up there)
+#set -o vi
+
+# vim: ft=bash

@@ -1,0 +1,23 @@
+# Git branch
+function git_branch {
+  local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null);
+  if [[ -n $branch ]];then
+    echo "($branch) ";
+  fi
+}
+
+# Backup
+function bak() {
+    cp -irv "$1"{,.bak};
+}
+
+function kab() {
+    mv -iv "$1" "${1%.bak}"
+}
+
+# Title of the terminal
+function title() {
+    echo -en "\033]0;$1\a"
+}
+
+# vim: ft=bash
