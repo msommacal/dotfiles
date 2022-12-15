@@ -1,0 +1,6 @@
+--recurse=yes
+--exclude=.git
+--exclude=.svn
+--exclude=\*.bak
+--exclude=\*.vim
+--extra=+f
