@@ -1,5 +1,5 @@
 ! theme
-#include ".config/X11/theme/nord"
+#include ".config/X11/theme/dracula"
 
 ! colors
 #include ".config/X11/Xresources.d/colors"
