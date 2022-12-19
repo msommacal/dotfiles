@@ -1,0 +1,8 @@
+/* Hide the personnal toolbar */
+#PersonalToolbar {
+  visibility: collapse !important;
+}
+
+#navigator-toolbox:hover #PersonalToolbar {
+  visibility: visible !important;
+}
