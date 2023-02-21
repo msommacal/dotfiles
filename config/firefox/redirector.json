@@ -1,0 +1,75 @@
+{
+    "createdBy": "Redirector v3.5.3",
+    "createdAt": "2023-02-07T21:34:47.452Z",
+    "redirects": [
+        {
+            "description": "Reddit",
+            "exampleUrl": "https://reddit.com/r/popular",
+            "exampleResult": "http://libreddit.localhost/r/popular",
+            "error": null,
+            "includePattern": "^((https?):\\/\\/)?(.*\\.)?reddit\\.com\\/?(.*)$",
+            "excludePattern": "^((https?):\\/\\/)?(.*\\.)?reddit\\.com\\/(poll|link|gallery)\\/(.*)$",
+            "patternDesc": "Alternative front-end for Reddit",
+            "redirectUrl": "http://libreddit.localhost/$4",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Twitter",
+            "exampleUrl": "https://twitter.com/Twitter",
+            "exampleResult": "https://nitter.fdn.fr/Twitter",
+            "error": null,
+            "includePattern": "^((https?):\\/\\/)?(.*\\.)?twitter\\.com\\/(.*)$",
+            "excludePattern": "",
+            "patternDesc": "Alternative front-end for Twitter.",
+            "redirectUrl": "https://nitter.fdn.fr/$4",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Youtube (Shorts)",
+            "exampleUrl": "https://www.youtube.com/shorts/-n0bwYtErbQ",
+            "exampleResult": "https://www.youtube.com/watch?v=-n0bwYtErbQ",
+            "error": null,
+            "includePattern": "^(https:\\/\\/www\\.youtube.com)\\/shorts\\/(.*)$",
+            "excludePattern": "",
+            "patternDesc": "Watch shorts as normal videos.",
+            "redirectUrl": "$1/watch?v=$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "history"
+            ]
+        },
+        {
+            "description": "Youtube (Wallabag)",
+            "exampleUrl": "https://www.youtube.com/oembed?format=xml&url=https://www.youtube.com/watch?v%3DjNQXAC9IVRw",
+            "exampleResult": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+            "error": null,
+            "includePattern": "^((https?):\\/\\/)?(.*\\.)?youtube\\.com\\/oembed\\?format\\=xml&url\\=(.*)$",
+            "excludePattern": "",
+            "patternDesc": "Fix Youtube link for Wallabag.",
+            "redirectUrl": "$4",
+            "patternType": "R",
+            "processMatches": "urlDecode",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        }
+    ]
+}
