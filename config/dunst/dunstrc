@@ -1,0 +1,154 @@
+[global]
+    # Which monitor should the notifications be displayed on
+    monitor = 0
+
+    # Display the notification on the monitor where the mouse is located
+    follow = mouse
+
+    # Geometry of the window (depreciated)
+    geometry = "300x5-10-10"
+
+    # Show how many messages are currently hidden (because of geometry)
+    indicate_hidden = yes
+
+    # Shrink window if it's smaller than the width.
+    shrink = no
+
+    # The transparency of the window
+    transparency = 0
+
+    # Height of the entire notification
+    notification_height = 0
+
+    # Height of separator between two notifications
+    separator_height = 2
+
+    # Padding
+    padding = 10
+    horizontal_padding = 10
+
+    # Defines width in pixels of frame around the notification window
+    frame_width = 2
+
+    # Defines color of the frame around the notification window
+    frame_color = "#bfbfbf"
+
+    # Define a color for the separator
+    separator_color = frame
+
+    # Sort messages by urgency
+    sort = yes
+
+    # Don't remove messages, if the user is idle
+    idle_threshold = 120
+
+    # Font
+    font = Ubuntu 9
+
+    # Line height 
+    line_height = 0
+
+    # Allow html markup in notifications
+    markup = full
+
+    # The format of the message
+    format = "<b>%s</b>\n%b"
+
+    # Alignment of message text
+    alignment = left
+
+    # Show age of message if message is older than 60 seconds
+    show_age_threshold = 60
+
+    # Specifies whether to wrap the text if the lines is longer than the width
+    word_wrap = yes
+
+    # Specifies where truncated lines should be ellipsized
+    ellipsize = middle
+
+    # Ignore newlines '\n' in notifications
+    ignore_newline = no
+
+    # Stack together notifications with the same content
+    stack_duplicates = true
+
+    # Hide the count of stacked notifications with the same content
+    hide_duplicate_count = false
+
+    # Display indicators for URLs (U) and actions (A)
+    show_indicators = yes
+
+    # Align icons left/right/off
+    icon_position = left
+
+    # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 32
+
+    # Paths to default icons
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    # Ignore timeout when a notification is recall from history
+    sticky_history = yes
+
+    # Maximum amount of notifications kept in history
+    history_length = 20
+
+    # dmenu path
+    dmenu = /usr/bin/dmenu -p dunst:
+
+    # Browser for opening urls in context menu
+    browser = /usr/bin/sensible-browser
+
+    # Always run rule-defined scripts, even if the notification is suppressed
+    always_run_script = true
+
+    # Define the title of the windows spawned by dunst
+    title = Dunst
+
+    # Define the class of the windows spawned by dunst
+    class = Dunst
+
+    # Don't print a notification on startup
+    startup_notification = false
+
+    # Manage dunst's desire for talking
+    verbosity = mesg
+
+    # Define the corner radius of the notification window
+    corner_radius = 0
+
+    # Defines action of mouse event
+    mouse_left_click = close_current
+    mouse_middle_click = do_action
+    mouse_right_click = close_all
+
+[experimental]
+    # Calculate the dpi to use on a per-monitor basis.
+    per_monitor_dpi = false
+
+[shortcuts]
+    # Close notification
+    close = mod4+shift+m
+
+    # Redisplay last message(s)
+    history = mod4+m
+
+[urgency_normal]
+    background = "#282a36"
+    foreground = "#50fa7b"
+    frame_color = "#50fa7b"
+    timeout = 10
+
+[urgency_low]
+    background = "#282a36"
+    foreground = "#f1fa8c"
+    frame_color = "#f1fa8c"
+    timeout = 10
+
+[urgency_critical]
+    background = "#282a36"
+    foreground = "#ff5555"
+    frame_color = "#ff5555"
+    timeout = 0
+
+# vim: ft=cfg nowrap
