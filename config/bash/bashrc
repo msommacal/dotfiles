@@ -16,7 +16,7 @@ done
 # Set the history
 HISTCONTROL=ignoreboth
 HISTSIZE=1000000
-export HISTFILE="$HOME/.local/state/bash/history"
+export HISTFILE="$HOME/.local/state/bash/history" && mkdir -p $(dirname $HISTFILE)
 export HISTFILESIZE=""
 export HISTTIMEFORMAT="%F %T "
 PROMPT_COMMAND="$PROMPT_COMMAND: history -a"
