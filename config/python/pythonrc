@@ -1,0 +1,20 @@
+import os
+import atexit
+import readline
+
+if readline.get_current_history_length() == 0:
+    if "PYTHONHISTFILE" in os.environ:
+        history = os.path.expanduser(os.environ.get("PYTHONHISTFILE"))
+    elif "XDG_STATE_HOME" in os.environ:
+        history = os.path.join(os.path.expanduser(os.environ.get("XDG_STATE_HOME")), "python", "python_history")
+    else:
+        history = os.path.join(os.path.expanduser(os.environ.get("~")), "python", "python_history")
+
+    try:
+        readline.read_history_file(history)
+    except FileNotFoundError:
+        pass
+
+    atexit.register(readline.write_history_file, history)
+
+# vim: ft=python

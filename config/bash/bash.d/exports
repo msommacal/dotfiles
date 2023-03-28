@@ -34,6 +34,10 @@ export LS_COLORS=$LS_COLORS:'ow=1;34:'
 export OCTAVE_HISTFILE="$HOME/.local/state/octave/history" && mkdir -p $(dirname $OCTAVE_HISTFILE) 
 export OCTAVE_SITE_INITFILE="~/.config/octave/octaverc"
 
+# Python
+export PYTHONHISTFILE="$HOME/.local/state/python/history" && mkdir -p $(dirname $PYTHONHISTFILE)
+export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
+
 # Readline
 export INPUTRC="$HOME/.config/readline/inputrc"
 
