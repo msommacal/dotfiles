@@ -42,7 +42,7 @@ export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
 export INPUTRC="$HOME/.config/readline/inputrc"
 
 # Scikit
-export SCIKIT_LEARN_DATA="$HOME/.local/share/scikit" && mkdir -p $(dirname $SCIKIT_LEARN_DATA) 
+export SCIKIT_LEARN_DATA="$HOME/.local/share/scikit" && mkdir -p $SCIKIT_LEARN_DATA
 
 # Scripts
 export PATH=$PATH:$HOME/.local/bin
@@ -52,7 +52,7 @@ export SQLITE_HISTORY="$HOME/.local/state/sqlite/history" && mkdir -p $(dirname 
 
 # TexLive
 export PATH=$PATH:$HOME/
-export TEXMFHOME="$HOME/.local/share/texmf" && mkdir -p $(dirname $TEXMFHOME) 
+export TEXMFHOME="$HOME/.local/share/texmf" && mkdir -p $TEXMFHOME
 
 # Vi
 export EDITOR=/usr/bin/vi
