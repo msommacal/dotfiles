@@ -13,7 +13,7 @@ function convert_path() {
 
 # Check the type of argument
 if [ -f "$1" ] || [ -d "$1" ]; then
-    convert_path $1
+    convert_path "$1"
 elif [[ $1 = "https:"* ]] || [[ $1 = "http:"* ]] || [[ $1 = "www."* ]]; then 
     ARG=$1
 else
@@ -21,4 +21,4 @@ else
     exit 1
 fi
 
-powershell.exe -Command Start-Process $ARG
+powershell.exe -Command Start-Process "'$ARG'"
