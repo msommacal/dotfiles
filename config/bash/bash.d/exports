@@ -56,5 +56,6 @@ export TEXMFHOME="$HOME/.local/share/texmf" && mkdir -p $TEXMFHOME
 
 # Vi
 export EDITOR=/usr/bin/vi
+export VIMINIT="set nocp | source $HOME/.config/vim/vimrc"
 
 # vim: ft=bash

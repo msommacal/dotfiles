@@ -1,0 +1,259 @@
+"list of directories used for runtime files and plugins
+set runtimepath^=$HOME/.config/vim
+set runtimepath+=$HOME/.local/share/vim
+set runtimepath+=$HOME/.config/vim/after
+
+"list of directories used for plugin packages
+set packpath^=$HOME/.local/share/vim,$HOME/.config/vim
+set packpath+=$HOME/.config/vim/after,$HOME/.local/share/vim/after
+
+"define leader key
+let mapleader=","
+
+"source the plugins
+packadd autocomplpop
+packadd editorconfig-vim
+packadd molokai
+
+"load colorscheme
+colorscheme molokai
+
+"enable file type detection
+filetype plugin indent on
+
+"don't behave very Vi compatible (advisable)
+set nocompatible
+
+"list of directory names used for file searching
+set path+=**
+
+"show match for partly typed search command
+set incsearch
+
+"change the way backslashes are used in search patterns
+set magic
+
+"override 'ignorecase' when pattern has upper case characters
+set smartcase
+
+"list of strings used for list mode
+set listchars=trail:_,tab:<->
+
+"show the line number for each line
+set number
+
+"show the relative line number for each line
+"set relativenumber
+
+"highlight all matches for the last used search pattern
+set hlsearch
+
+"highlight the screen column of the cursor
+"set cursorline
+
+"when to use a status line for the last window
+set laststatus=2
+
+"alternate format to be used for a status line
+let g:currentmode={
+    \ 'n'  : 'Normal',
+    \ 'no' : 'Normal·Operator Pending',
+    \ 'v'  : 'Visual',
+    \ 'V'  : 'V·Line',
+    \ "\<C-V>" : 'V·Block',
+    \ 's'  : 'Select',
+    \ 'S'  : 'S·Line',
+    \ '^S' : 'S·Block',
+    \ 'i'  : 'Insert',
+    \ 'R'  : 'Replace',
+    \ 'Rv' : 'V·Replace',
+    \ 'c'  : 'Command',
+    \ 'cv' : 'Vim Ex',
+    \ 'ce' : 'Ex',
+    \ 'r'  : 'Prompt',
+    \ 'rm' : 'More',
+    \ 'r?' : 'Confirm',
+    \ '!'  : 'Shell',
+    \ 't'  : 'Terminal'
+    \}
+"set statusline=%#PmenuSel#\ %{toupper(g:currentmode[mode()])}\ %#CursorColumn#
+"set statusline+=\ %F\ %l\|%c\ %m%=%p%%\ (%Y%R)
+
+"don't unload a buffer when no longer shown in a window
+"set hidden
+
+"a new window is put below the current one
+set splitbelow
+
+"a new window is put right of the current one
+set splitright
+
+"list of flags for using the mouse
+set mouse=a
+
+"type of mouse
+set ttymouse=xterm2
+
+"list of flags to make messages shorter
+set shortmess+=c
+
+"show (partial) command keys in the status line
+set showcmd
+
+"don't display the current mode in the status line
+"set noshowmode
+
+"list of directories for undo files
+set undodir=$HOME/.local/state/vim/undo | call mkdir(&undodir, 'p', 0700)
+
+"specifies what <BS>, CTRL-W, etc. can do in Insert mode
+set backspace=indent,eol,start
+
+"specifies how Insert mode completion works for CTRL-N and CTRL-P
+"set complete+=kspell
+
+"whether to use a popup menu for Insert mode completion
+set completeopt=menuone,longest
+
+"when inserting a bracket, briefly jump to its match
+set showmatch
+
+"number of spaces a <Tab> in the text stands for
+set tabstop=4
+
+"number of spaces to insert for a <Tab>
+set softtabstop=4
+
+"expand <Tab> to spaces in Insert mode
+set expandtab
+
+"don't keep a backup after overwriting a file
+set nobackup
+
+"list of directories to put backup files in
+set backupdir=$HOME/.cache/vim/backup | call mkdir(&backupdir, 'p', 0700)
+
+"list of directories for the swap file
+set directory=$HOME/.cache/vim/swap | call mkdir(&directory, 'p', 0700)
+
+"list of patterns to ignore files for file name completion
+set wildignore=*.o,*.class
+
+"command-line completion shows a list of matches
+set wildmenu
+
+"directory where to store files with :mkview
+set viewdir=$HOME/.local/state/vim/view | call mkdir(&viewdir, 'p', 0700)
+
+"file name used for the viminfo
+set viminfofile=$HOME/.local/state/vim/viminfo
+
+"make the directory used for spell
+call mkdir($HOME."/.local/share/vim/spell", 'p', 0700)
+
+"enable folding for markdown
+"let g:markdown_enable_folding = 1
+
+"change from above splitting to below splitting
+let g:netrw_alto=1
+
+"change from left splitting to right splitting
+let g:netrw_altv=1
+
+"suppress the banner
+let g:netrw_banner=0
+
+"home directory for where bookmarks and history are saved
+let g:netrw_home = "$HOME/.local/state/vim"
+
+"keep the current directory the same as the browsing directory
+"let g:netrw_keepdir=0
+
+"comma separated pattern list for hiding files
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
+
+"set the default listing style to tree style listing
+let g:netrw_liststyle=3
+
+"specify initial size of new windows made
+"let g:netrw_winsize=20
+
+"define target for vim-slime
+let g:slime_target="tmux"
+
+"define tmux socket name for vim-slime
+let g:slime_default_config={"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.1"}
+
+"define a new wiki
+let wiki = {}
+
+"wiki files location
+let wiki.path = '$HOME/Documents/wiki'
+
+"location of HTML files converted from wiki files
+let wiki.path_html = '~/Documents/wiki/exports'
+
+"automatically generate the HTML file when corresponding wiki page is saved
+let wiki.auto_export = 1
+
+"automatically update the table of contents when the current wiki page is saved
+"let wiki.auto_toc = 1
+
+"name of wiki index file (without extension)
+let wiki.index = 'index'
+
+"extension of wiki files"
+let wiki.ext = '.md'
+
+"wiki syntax
+let wiki.syntax = 'markdown'
+
+"replace spaces when creating a link
+let wiki.links_space_char = '_'
+
+"setup path for HTML templates
+"let wiki.template_path = '$HOME/Documents/wiki/templates'
+
+"setup default template name (without extension)
+"let wiki.template_default = 'def_template'
+
+"setup template filename extension
+"let wiki.template_ext = '.html'
+
+"setup CSS file name
+"let wiki.css_name = 'style.css'
+
+"configure preformatted text to be highlighted with any syntax
+let wiki.automatic_nested_syntaxes = 1
+
+"custom convert a wiki page to HTML
+let wiki.custom_wiki2html = '$HOME/.config/vim/vimwiki-pandoc.sh'
+
+"list of file patterns to exclude when checking or generating links
+let wiki.exclude_files = ['**/README.md']
+
+"add wiki to vimwiki list
+let g:vimwiki_list = [wiki]
+
+"automatically generate a level 1 header when creating a new wiki page
+let g:vimwiki_auto_header = 1
+
+"turn off creation of temporary wikis
+let g:vimwiki_global_ext = 0
+
+"stop highlighting all matches for the last used search pattern
+nnoremap <Esc><Esc> :nohlsearch<CR>
+
+"move vertically by visual line
+nnoremap k gk
+nnoremap <Up> gk
+nnoremap j gj
+nnoremap <Down> gj
+
+"templates
+if has("autocmd")
+    augroup templates
+        autocmd BufNewFile *.* silent! execute expand("0r $HOME/.local/share/vim/templates/main.<afile>:e")
+    augroup END
+endif

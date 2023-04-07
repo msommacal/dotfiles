@@ -1,6 +1,6 @@
 # "Run commands" aliases
 alias bashrc='vi ~/.config/bash/bashrc'
-alias vimrc='vi ~/.vim/vimrc'
+alias vimrc='vi ~/.config/vim/vimrc'
 
 # Color aliases
 alias ls='ls --color=auto'
@@ -33,5 +33,6 @@ alias week='date +%V'
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias myip='curl http://ipecho.net/plain; echo'
 alias httpserver='python3 -m http.server & firefox localhost:8000'
+alias wiki='vim -c VimwikiIndex'
 
 # vim: ft=bash
