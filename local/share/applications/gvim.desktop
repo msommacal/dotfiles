@@ -1,0 +1,40 @@
+[Desktop Entry]
+
+# The type of desktop entry
+Type=Application
+
+# The version of the desktop entry specification to which this file complies
+Version=1.5
+
+# The specific name of the application
+Name=GVim
+
+# The generic name of the application
+GenericName=Text Editor
+
+# The name of the icon that will be used to display this entry
+Icon=gvim
+
+# A comment which can/will be used as a tooltip
+Comment=Edit text files
+
+# A path to an executable file used to determine if the program is installed
+TryExec=gvim
+
+# The executable of the application, possibly with arguments.
+Exec=env GVIMINIT="set nocp | source $HOME/.config/vim/gvimrc" VIMINIT="set nocp | source $HOME/.config/vim/vimrc" gvim -f %F
+
+# Describes whether this application needs to be run in a terminal or not
+Terminal=false
+
+# The MIME types supported by this application
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+
+# Describes the categories in which this entry should be shown
+Categories=Utility;TextEditor;
+
+# List of strings which may be used to describe this entry
+Keywords=Text;editor;
+
+# It is KNOWN that the application will send a "remove" message when started
+StartupNotify=true

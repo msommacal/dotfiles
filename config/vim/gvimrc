@@ -1,5 +1,8 @@
+"source the plugins
 packadd molokai
 
+"load colorscheme
 colorscheme molokai
 
+"do not ring the bell for these reasons
 set belloff=all
