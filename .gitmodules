@@ -1,0 +1,24 @@
+[submodule "config/vim/pack/colors/opt/molokai"]
+	path = config/vim/pack/colors/opt/molokai
+	url = https://github.com/tomasr/molokai
+[submodule "config/vim/pack/colors/opt/wal.vim"]
+	path = config/vim/pack/colors/opt/wal.vim
+	url = https://github.com/dylanaraps/wal.vim
+[submodule "config/vim/pack/plugins/opt/autocomplpop"]
+	path = config/vim/pack/plugins/opt/autocomplpop
+	url = https://github.com/vim-scripts/AutoComplPop
+[submodule "config/vim/pack/plugins/opt/vim-slime"]
+	path = config/vim/pack/plugins/opt/vim-slime
+	url = https://github.com/jpalardy/vim-slime
+[submodule "config/vim/pack/plugins/opt/vim-gutentags"]
+	path = config/vim/pack/plugins/opt/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule "config/vim/pack/plugins/start/editorconfig-vim"]
+	path = config/vim/pack/plugins/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "config/vim/pack/plugins/start/vim-tmux-navigator"]
+	path = config/vim/pack/plugins/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "config/vim/pack/plugins/start/vimwiki"]
+	path = config/vim/pack/plugins/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki
