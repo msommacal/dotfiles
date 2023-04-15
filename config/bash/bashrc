@@ -44,5 +44,5 @@ PS1+='$(git_branch)'
 
 # Start a tmux session
 if [[ -z $TMUX ]]; then
-    tmux
+    env TERM=screen-256color tmux
 fi
