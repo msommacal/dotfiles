@@ -1,0 +1,6 @@
+! remove comments and recommandations in youtube
+www.youtube.com##.ytd-watch-next-secondary-results-renderer.style-scope
+www.youtube.com###comments > .ytd-comments.style-scope
+
+! remove yunohost button
+msommacal.nohost.me###ynh-overlay-switch
