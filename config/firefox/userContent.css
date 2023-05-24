@@ -8,3 +8,11 @@ a[href^="javascript:"] {
 :link[target="_new"], :visited[target="_new"] {
     cursor: not-allowed;
 }
+
+/* Fix youtube iframe in Wallabag */
+@-moz-document domain(msommacal.nohost.me) {
+    iframe#video {
+        width: 400px !important;
+        height: 226px !important;
+    }
+}
