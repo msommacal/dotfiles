@@ -1,0 +1,273 @@
+# VARIABLES
+
+# modifiers
+set $alt Mod1
+set $win Mod4
+
+# moving
+set $left  "h"
+set $down  "j"
+set $up    "k"
+set $right "l"
+
+# workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "10" 
+
+# monitors
+set $monitor1 "HDMI-1"
+set $monitor2 "eDP-1"
+
+# resize mode
+set $resize "resize"
+
+# APPEARANCE
+
+# font
+font pango:Ubuntu 8
+
+# window title
+for_window [class=".*"] title_format "   %title"
+
+# colors
+set_from_resource $alert      i3wm.alert      #bf616a
+set_from_resource $background i3wm.background #2e3440
+set_from_resource $disabled   i3wm.disabled   #4c566a
+set_from_resource $focused    i3wm.focused    #3b4252
+set_from_resource $foreground i3wm.foreground #d8dee9
+
+# class                  border       backgr.      text         indicator    child_border
+client.focused           $focused     $focused     $foreground  $focused     $focused
+client.focused_inactive  $background  $background  $foreground  $background  $background
+client.unfocused         $background  $background  $foreground  $background  $background
+client.urgent            $alert       $alert       $foreground  $background  $alert
+client.placeholder       $background  $background  $foreground  $background  $background
+
+client.background        $foreground
+
+# i3 gaps
+#smart_gaps on
+gaps inner 10
+gaps outer 0
+for_window [class="^.*"] border pixel 2
+
+# default layout
+# workspace_layout tabbed
+
+# workspace back and forth
+workspace_auto_back_and_forth yes
+
+# ASSIGN
+
+# monitor
+workspace $ws1 output $monitor2
+workspace $ws2 output $monitor2
+workspace $ws3 output $monitor2
+workspace $ws4 output $monitor2
+workspace $ws5 output $monitor2
+workspace $ws6 output $monitor1
+workspace $ws7 output $monitor1
+workspace $ws8 output $monitor1
+workspace $ws9 output $monitor1
+workspace $ws0 output $monitor1
+
+# workspace
+assign [class="discord"] $ws0
+assign [class="thunderbird"] $ws0
+
+# BINDSYM
+
+# exec
+bindsym $alt+Tab              exec --no-startup-id rofi -show window
+bindsym $win+$alt+l           exec --no-startup-id ~/.config/i3/script/lock.sh
+bindsym $win+b                exec --no-startup-id firefox 
+bindsym $win+d                exec --no-startup-id rofi -show drun
+bindsym $win+e                exec --no-startup-id nautilus 
+bindsym $win+p                exec --no-startup-id ~/.config/i3/script/monitor.sh
+bindsym $win+Return           exec --no-startup-id uxterm
+#bindsym $win+Return           exec --no-startup-id i3-sensible-terminal
+bindsym $win+x                exec --no-startup-id ~/.config/i3/script/powermenu.sh
+bindsym $win+n                exec --no-startup-id ~/.config/i3/script/live.sh
+
+# brightness
+bindsym $win+F2               exec --no-startup-id brightnessctl set 5%-
+bindsym $win+F3               exec --no-startup-id brightnessctl set +5%
+
+# split
+bindsym $win+s                split vertical
+bindsym $win+v                split horizontal
+
+# layout
+bindsym $win+u                layout stacking
+bindsym $win+i                layout tabbed
+bindsym $win+o                layout toggle split
+bindsym $win+space            layout toggle all
+
+# focus
+bindsym $win+$left            focus left
+bindsym $win+$down            focus down
+bindsym $win+$up              focus up
+bindsym $win+$right           focus right
+bindsym $win+a                focus parent
+bindsym $win+z                focus child
+bindsym $win+w                focus mode_toggle
+
+# move window
+bindsym $win+Shift+$left      move left
+bindsym $win+Shift+$down      move down
+bindsym $win+Shift+$up        move up
+bindsym $win+Shift+$right     move right
+
+# move window to workspace
+bindsym $win+Shift+1          move container to workspace number $ws1
+bindsym $win+Shift+2          move container to workspace number $ws2
+bindsym $win+Shift+3          move container to workspace number $ws3
+bindsym $win+Shift+4          move container to workspace number $ws4
+bindsym $win+Shift+5          move container to workspace number $ws5
+bindsym $win+Shift+6          move container to workspace number $ws6
+bindsym $win+Shift+7          move container to workspace number $ws7
+bindsym $win+Shift+8          move container to workspace number $ws8
+bindsym $win+Shift+9          move container to workspace number $ws9
+bindsym $win+Shift+0          move container to workspace number $ws0
+
+# move workspace to monitor
+bindsym $win+Ctrl+$left       move workspace to output left
+bindsym $win+Ctrl+$right      move workspace to output right
+
+# floating
+bindsym $win+Shift+f          floating toggle
+floating_modifier             $win
+
+# fullscreen
+bindsym $win+f                fullscreen toggle
+
+# sticky
+bindsym $win+Shift+t          sticky toggle
+
+# rename workspace
+#bindsym $win+comma           rename workspace to "4 : test"
+
+# restart
+bindsym $win+Shift+r          restart 
+
+# reload
+bindsym $win+Shift+c          reload
+
+# scratchpad
+#bindsym $win+g                [class="^(?!KeeWeb).*$"] scratchpad show
+bindsym $win+g                scratchpad show
+bindsym $win+Shift+g          move scratchpad
+
+# kill
+bindsym $win+Shift+q          kill
+
+# resize
+mode $resize {
+    bindsym $left             resize shrink width  5 px or 5 ppt
+    bindsym $down             resize grow   height 5 px or 5 ppt
+    bindsym $up               resize shrink height 5 px or 5 ppt
+    bindsym $right            resize grow   width  5 px or 5 ppt
+    bindsym Shift+$left       resize shrink width  20 px or 20 ppt
+    bindsym Shift+$down       resize grow   height 20 px or 20 ppt
+    bindsym Shift+$up         resize shrink height 20 px or 20 ppt
+    bindsym Shift+$right      resize grow   width  20 px or 20 ppt
+
+    # back to normal mode
+    bindsym Return            mode "default"
+    bindsym Escape            mode "default"
+    bindsym $win+r            mode "default"
+}
+
+bindsym $win+r                mode $resize
+
+# player
+bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay         exec playerctl --all-players play-pause
+bindsym XF86AudioNext         exec playerctl --all-players next
+bindsym XF86AudioPrev         exec playerctl --all-players previous
+
+# workspace
+bindsym $win+ampersand        workspace number $ws1
+bindsym $win+eacute           workspace number $ws2
+bindsym $win+quotedbl         workspace number $ws3
+bindsym $win+apostrophe       workspace number $ws4
+bindsym $win+parenleft        workspace number $ws5
+bindsym $win+minus            workspace number $ws6
+bindsym $win+egrave           workspace number $ws7
+bindsym $win+underscore       workspace number $ws8
+bindsym $win+ccedilla         workspace number $ws9
+bindsym $win+agrave           workspace number $ws0
+
+# screenshot
+bindsym Print                 exec --no-startup-id ~/.config/i3/script/screenshot.sh --screen
+bindsym Ctrl+Print            exec --no-startup-id ~/.config/i3/script/screenshot.sh --window
+bindsym Shift+Print --release exec --no-startup-id ~/.config/i3/script/screenshot.sh --area
+
+# mouse
+focus_follows_mouse no
+
+# EXEC
+
+# X
+exec --no-startup-id xrdb -merge -I$HOME $HOME/.config/X11/Xresources
+exec_always --no-startup-id xrdb -load -I$HOME $HOME/.config/X11/Xresources
+
+# network manager
+exec --no-startup-id nm-applet
+
+# wallpaper
+#exec --no-startup-id feh --bg-max ~/Images/wallpaper/forest_mountain.jpg
+exec --no-startup-id ~/.config/fehbg
+
+# capslock key to escape
+exec --no-startup-id setxkbmap -option caps:escape
+
+# dual monitors
+exec --no-startup-id xrandr --output $monitor2 --auto --right-of $monitor1
+
+# dark theme
+exec --no-startup-id /usr/libexec/gsd-xsettings
+
+# authentification
+exec --no-startup-id lxpolkit
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# firefox
+for_window [class="firefox" window_role="PictureInPicture"] sticky enable 
+for_window [class="firefox" urgent="latest"] focus
+
+# keeweb
+bindsym $win+t [class="KeeWeb"] scratchpad show
+for_window [class="KeeWeb"] floating enable
+for_window [class="KeeWeb"] move scratchpad
+for_window [class="KeeWeb"] resize set 1000 600
+exec --no-startup-id keeweb
+
+# mpv 
+for_window [class="mpv"] sticky enable
+
+# redshift
+# exec --no-startup-id redshift
+
+# thunderbird
+exec --no-startup-id thunderbird
+
+# vlc
+#popup_during_fullscreen smart
+
+# polybar
+exec_always --no-startup-id "killall polybar;polybar -r left & polybar -r right"
