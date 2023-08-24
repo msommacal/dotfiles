@@ -239,6 +239,22 @@ let g:vimwiki_list = [wiki]
 "automatically generate a level 1 header when creating a new wiki page
 let g:vimwiki_auto_header = 1
 
+"dictionary with the numbers of months and corresponding names
+let g:vimwiki_diary_months = {
+    \ 1: 'Janvier',
+    \ 2: 'Février',
+    \ 3: 'Mars',
+    \ 4: 'Avril',
+    \ 5: 'Mai',
+    \ 6: 'Juin',
+    \ 7:  'Juillet',
+    \ 8:  'Août',
+    \ 9:  'Septembre',
+    \ 10: 'Octobre',
+    \ 11: 'Novembre',
+    \ 12: 'Décembre'
+    \}
+
 "turn off creation of temporary wikis
 let g:vimwiki_global_ext = 0
 
