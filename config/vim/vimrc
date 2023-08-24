@@ -262,10 +262,10 @@ let g:vimwiki_global_ext = 0
 nnoremap <Esc><Esc> :nohlsearch<CR>
 
 "move vertically by visual line
-nnoremap k gk
-nnoremap <Up> gk
-nnoremap j gj
-nnoremap <Down> gj
+noremap k gk
+noremap <Up> gk
+noremap j gj
+noremap <Down> gj
 
 "templates
 if has("autocmd")
