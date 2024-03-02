@@ -1,19 +1,21 @@
 #!/bin/bash
 
-monitor1="eDP-1"    # intern
-monitor2="HDMI-1"   # extern
+monitors=$(xrandr --query | grep " connected " | cut -f1 -d' ')
+
+monitor1="$(echo $monitors | cut -f1 -d' ')"    # intern
+monitor2="$(echo $monitors | cut -f2 -d' ')"    # extern
 
 function menu() {
-    printf "intern\nextern\nmirror\nexpand"
+    printf "intern ($monitor1)\nextern ($monitor2)\nmirror\nexpand"
 }
 
 MENU=$( menu | rofi -dmenu -p "display")
 
 case $MENU in
-    intern)
+    intern*)
         xrandr --output $monitor2 --off --output $monitor1 --auto
         ;;
-    extern)
+    extern*)
         xrandr --output $monitor1 --off --output $monitor2 --auto
         ;;
     mirror)
@@ -21,7 +23,5 @@ case $MENU in
         ;;
     expand)
         xrandr --output $monitor1 --auto --output $monitor2 --auto && xrandr --output $monitor2 --auto --right-of $monitor1
-        wal -R
-        # ~/.config/fehbg
         ;;
 esac

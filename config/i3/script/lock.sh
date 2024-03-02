@@ -15,3 +15,6 @@ convert $LOCK_SCREENSHOT -blur $BLUR $BLUR_SCREENSHOT
 
 # lock the screen
 i3lock --show-failed-attempts --image=/tmp/blur_screenshot.png
+
+# delete the screenshot
+rm /tmp/blur_screenshot.png

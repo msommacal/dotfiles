@@ -88,12 +88,12 @@ assign [class="thunderbird"] $ws0
 # exec
 bindsym $alt+Tab              exec --no-startup-id rofi -show window
 bindsym $win+$alt+l           exec --no-startup-id ~/.config/i3/script/lock.sh
-bindsym $win+b                exec --no-startup-id firefox 
+bindsym $win+b                exec --no-startup-id x-www-browser 
 bindsym $win+d                exec --no-startup-id rofi -show drun
-bindsym $win+e                exec --no-startup-id nautilus 
+bindsym $win+e                exec --no-startup-id rofi -show filebrowser 
+bindsym $win+Shift+e          exec --no-startup-id nautilus
 bindsym $win+p                exec --no-startup-id ~/.config/i3/script/monitor.sh
-bindsym $win+Return           exec --no-startup-id uxterm
-#bindsym $win+Return           exec --no-startup-id i3-sensible-terminal
+bindsym $win+Return           exec --no-startup-id i3-sensible-terminal
 bindsym $win+x                exec --no-startup-id ~/.config/i3/script/powermenu.sh
 bindsym $win+n                exec --no-startup-id ~/.config/i3/script/live.sh
 
@@ -220,45 +220,38 @@ focus_follows_mouse no
 # EXEC
 
 # X
-exec --no-startup-id xrdb -merge -I$HOME $HOME/.config/X11/Xresources
 exec_always --no-startup-id xrdb -load -I$HOME $HOME/.config/X11/Xresources
 
-# network manager
-exec --no-startup-id nm-applet
-
 # wallpaper
-#exec --no-startup-id feh --bg-max ~/Images/wallpaper/forest_mountain.jpg
-exec --no-startup-id ~/.config/fehbg
+exec --no-startup-id feh --no-fehbg --bg-fill ~/.local/share/backgrounds/wallpaper.png 
 
 # capslock key to escape
-exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap fr -variant oss -option caps:escape
 
 # dual monitors
-exec --no-startup-id xrandr --output $monitor2 --auto --right-of $monitor1
+#exec --no-startup-id xrandr --output $monitor2 --auto --right-of $monitor1
 
 # dark theme
-exec --no-startup-id /usr/libexec/gsd-xsettings
+#exec --no-startup-id /usr/libexec/gsd-xsettings
 
 # authentification
-exec --no-startup-id lxpolkit
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id lxpolkit
 
 # firefox
-for_window [class="firefox" window_role="PictureInPicture"] sticky enable 
-for_window [class="firefox" urgent="latest"] focus
+for_window [class=".irefox*" window_role="PictureInPicture"] sticky enable 
+for_window [class=".irefox*" urgent="latest"] focus
 
 # keeweb
 bindsym $win+t [class="KeeWeb"] scratchpad show
 for_window [class="KeeWeb"] floating enable
 for_window [class="KeeWeb"] move scratchpad
-for_window [class="KeeWeb"] resize set 1000 600
 exec --no-startup-id keeweb
 
 # mpv 
 for_window [class="mpv"] sticky enable
+
+# minecraft
+for_window [class="^Minecraft"] fullscreen enable
 
 # redshift
 # exec --no-startup-id redshift
@@ -270,4 +263,5 @@ exec --no-startup-id thunderbird
 #popup_during_fullscreen smart
 
 # polybar
-exec_always --no-startup-id "killall polybar;polybar -r left & polybar -r right"
+#exec_always --no-startup-id "killall polybar;polybar -r left & polybar -r right"
+exec_always --no-startup-id "killall polybar;polybar -r default"

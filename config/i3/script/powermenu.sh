@@ -14,9 +14,9 @@ case $MENU in
         $HOME/.config/i3/script/lock.sh
         ;;
     "power off")
-        poweroff
+        systemctl poweroff
         ;;
     "reboot")
-        reboot
+        systemctl reboot
         ;;
 esac
