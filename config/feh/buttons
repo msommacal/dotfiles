@@ -1,0 +1,9 @@
+# unbind existing scroll operations
+prev_img
+next_img
+
+# set <action> <mouse button>
+zoom_in 4
+zoom_out 5
+
+# vim: ft=config
