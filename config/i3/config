@@ -81,6 +81,8 @@ workspace $ws0 output $monitor1
 
 # workspace
 assign [class="discord"] $ws0
+assign [class="Signal"] $ws0
+assign [class="teams-for-linux"] $ws0
 assign [class="thunderbird"] $ws0
 
 # BINDSYM
@@ -98,8 +100,8 @@ bindsym $win+x                exec --no-startup-id ~/.config/i3/script/powermenu
 bindsym $win+n                exec --no-startup-id ~/.config/i3/script/live.sh
 
 # brightness
-bindsym $win+F2               exec --no-startup-id brightnessctl set 5%-
-bindsym $win+F3               exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5%
 
 # split
 bindsym $win+s                split vertical
@@ -197,6 +199,11 @@ bindsym XF86AudioPlay         exec playerctl --all-players play-pause
 bindsym XF86AudioNext         exec playerctl --all-players next
 bindsym XF86AudioPrev         exec playerctl --all-players previous
 
+# push-to-talk
+bindsym Insert                exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 0
+bindsym --release Insert      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 1
+bindsym Shift+Insert          exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # workspace
 bindsym $win+ampersand        workspace number $ws1
 bindsym $win+eacute           workspace number $ws2
@@ -256,6 +263,10 @@ for_window [class="^Minecraft"] fullscreen enable
 # redshift
 # exec --no-startup-id redshift
 
+# teams
+exec --no-startup-id gtk-launch ~/.local/share/applications/teams-clearsy.desktop
+exec --no-startup-id gtk-launch ~/.local/share/applications/teams-siemens.desktop
+
 # thunderbird
 exec --no-startup-id thunderbird
 
@@ -263,5 +274,5 @@ exec --no-startup-id thunderbird
 #popup_during_fullscreen smart
 
 # polybar
-#exec_always --no-startup-id "killall polybar;polybar -r left & polybar -r right"
-exec_always --no-startup-id "killall polybar;polybar -r default"
+exec_always --no-startup-id "killall polybar;polybar -r left & polybar -r right"
+#exec_always --no-startup-id "killall polybar;polybar -r default"
