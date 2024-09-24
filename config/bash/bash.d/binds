@@ -5,4 +5,9 @@ bind '"\e[A": history-search-backward'
 # Vi mode (don't work with bind up there)
 #set -o vi
 
+# Source other bindings
+for i in $HOME/.config/bash/bash.d/binds.d/*; do
+    source $i
+done
+
 # vim: ft=bash

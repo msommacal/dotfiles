@@ -5,7 +5,9 @@ fi
 
 # Source the aliases, binds, functions and exports
 for i in $HOME/.config/bash/bash.d/*; do
-    source $i
+    if [ -f "$i" ]; then
+        source $i
+    fi
 done
 
 # Source the auto-completion
@@ -44,5 +46,6 @@ PS1+='$(git_branch)'
 
 # Start a tmux session
 if [[ -z $TMUX ]]; then
-    env TERM=screen-256color tmux
+    #env TERM=screen-256color tmux
+    tmux
 fi
