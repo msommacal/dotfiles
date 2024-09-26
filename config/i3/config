@@ -235,6 +235,9 @@ exec --no-startup-id feh --no-fehbg --bg-fill ~/.local/share/backgrounds/wallpap
 # capslock key to escape
 exec --no-startup-id setxkbmap fr -variant oss -option caps:escape
 
+# numlock on
+exec --no-startup-id numlockx on
+
 # dual monitors
 #exec --no-startup-id xrandr --output $monitor2 --auto --right-of $monitor1
 
