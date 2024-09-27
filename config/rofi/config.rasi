@@ -2,7 +2,7 @@ configuration {
     click-to-exit: false;
     hide-scrollbar: true;
     matching: "fuzzy";
-    modi: "window,drun,run,ssh,file-browser";
+    modi: "window,drun,run,ssh,filebrowser";
     padding: 20;
     sidebar-mode: true;
     kb-cancel: "Escape";
