@@ -37,6 +37,6 @@
 #define COLOR15     #e6e6e6
 
 ! fonts
-#define FONT        Ubuntu Mono Regular
+#define FONT        Ubuntu Mono
 
 ! vim: ft=xdefaults

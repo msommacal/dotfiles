@@ -1,6 +1,6 @@
 ! fonts
 xterm*faceName: FONT
-xterm*faceSize: 10
+xterm*faceSize: 12
 
 ! clipboard
 xterm*VT100.Translations: #override \
