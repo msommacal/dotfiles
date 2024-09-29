@@ -16,13 +16,13 @@ OUTPUT="$4$(basename "$5" .$3).html"
 INPUT="$5"
 
 # path of the css file for the wiki
-CSSFILE="$(basename $6)"
+CSSFILE="$6"
 
 # path of mathjax library
 MATHJAX="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Add HTML extension to link
-sed -E 's/(\[.+\])\(([^#)]+)\)/\1(\2.html)/g' < "$INPUT" |
+sed -E 's/(\[.*\])\(([^#..]*)(#.*)?\)/\1(\2.html\3)/g' < "$INPUT" |
 
 # Convert Markdown to HTML
 pandoc --mathjax=$MATHJAX -s -f $SYNTAX -t html -c $CSSFILE --shift-heading-level-by=-1 -o $OUTPUT

@@ -15,8 +15,12 @@ packadd autocomplpop
 packadd editorconfig-vim
 packadd molokai
 
+if has("syntax")
+    syntax on
+end
+
 "load colorscheme
-colorscheme molokai
+"colorscheme molokai
 
 "enable file type detection
 filetype plugin indent on
