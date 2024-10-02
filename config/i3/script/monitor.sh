@@ -1,9 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-monitors=$(xrandr --query | grep " connected " | cut -f1 -d' ')
-
-monitor1="$(echo $monitors | cut -f1 -d' ')"    # intern
-monitor2="$(echo $monitors | cut -f2 -d' ')"    # extern
+monitor1="$(xrandr -q | grep -w connected | awk 'NR==1 {print $1}')" # intern
+monitor2="$(xrandr -q | grep -w connected | awk 'NR==2 {print $1}')" # extern
 
 function menu() {
     printf "intern ($monitor1)\nextern ($monitor2)\nmirror\nexpand"
