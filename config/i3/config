@@ -150,6 +150,7 @@ floating_modifier             $win
 
 # fullscreen
 bindsym $win+f                fullscreen toggle
+bindsym $win+$alt+f           fullscreen toggle global
 
 # sticky
 bindsym $win+Shift+t          sticky toggle
